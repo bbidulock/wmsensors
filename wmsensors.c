@@ -79,10 +79,10 @@ char *Geometry;
 char *LedColor = "LightSeaGreen";
 
 /* Thanks to Lars Kellogg-Stedman for removing a kluge from the next line */
-char Execute1[] = "xterm -T wmsensors -e sh -c 'sensors | less' &";
+char Execute1[] = "x-terminal-emulator -T wmsensors -e sh -c 'sensors | less' &";
 
-char Execute2[] = "/usr/local/bin/sensors -s";
-char Execute3[] = "xterm -T wmsensors -e man wmsensors &";
+char Execute2[] = "/usr/bin/sensors -s";
+char Execute3[] = "x-terminal-emulator -T wmsensors -e man wmsensors &";
 char *ExecuteAlarm;
 char *ERR_colorcells = "not enough free color cells\n";
 char *ampers = " &";

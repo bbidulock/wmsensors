@@ -1,3 +1,30 @@
+wmsensors (1.0.4-3.4) unstable; urgency=low
+
+  * NMU, fix architecture.  Closes: #238253
+
+ -- LaMont Jones <lamont@debian.org>  Fri,  2 Apr 2004 07:14:07 -0700
+
+wmsensors (1.0.4-3.3) unstable; urgency=low
+
+  * NMU on request to fix libsensors dependency, closes: #237347.
+
+ -- Martin A. Godisch <godisch@debian.org>  Mon, 15 Mar 2004 16:33:35 +0100
+
+wmsensors (1.0.4-3.2) unstable; urgency=low
+
+  * Rebuilt to auto fix dependency on libsensors-debian (Closes: #211079)
+
+ -- Sylvain LE GALL <sylvain.le-gall@polytechnique.org>  Sun, 12 Oct 2003 22:46:03 +0200
+
+wmsensors (1.0.4-3.1) unstable; urgency=low
+
+  * Rebuilt against new libsensors-dev (Closes: #197023)
+  * wmsensors.c
+    + Use x-terminal-emulator instead of xterm (Closes: #115866)
+    + Use /usr/bin instead of /usr/local/bin
+
+ -- Julien Danjou <acid@debian.org>  Wed, 27 Aug 2003 16:59:27 +0200
+
 wmsensors (1.0.4-3) unstable; urgency=low
 
   * Updated build-depends
