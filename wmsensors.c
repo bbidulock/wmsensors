@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <X11/Xlib.h>
 #include <X11/xpm.h>
@@ -758,7 +759,7 @@ void InsertLm(int multiple_lm75, int AlarmRequired)
 
    /* Convert data into actual pixel values */
    /* Temperatures (for left-hand column) */
-/*   fprintf(log_file, "# Pixel conversion.\n"); /**/
+/*   fprintf(log_file, "# Pixel conversion.\n"); */
    temp2p=((temp2-temp_ll)/3)+42;
    temp3p=((temp3-temp_ll)/3)+42;
    temp1p=((temp1-temp_ll)/3)+42;
@@ -782,7 +783,7 @@ void InsertLm(int multiple_lm75, int AlarmRequired)
    fan2p=(fan2/625)+10;
    fan3p=(fan3/625)+1;
 
-/*   fprintf(log_file, "# Window redraw.\n");   /**/
+/*   fprintf(log_file, "# Window redraw.\n");   */
    /* Move the areas (ie shift the pre-drawn rectangles left) */
    XCopyArea(dpy, visible.pixmap, visible.pixmap, NormalGC,
         	Shape(7), Shape(6), 25, 52, Shape(6), Shape(6));
@@ -824,7 +825,7 @@ left */
      XCopyArea(dpy, wmsensors.pixmap, visible.pixmap, NormalGC,
 	      Shape(16), Shape(8), 1, 1, Shape(57), Shape(53));
 
-/*     fprintf(log_file, "# Redrawing graphs.\n"); /**/
+/*     fprintf(log_file, "# Redrawing graphs.\n"); */
     /* CPU temps and motherboard temp */
     act = 58 - temp2p;
     if( temp2 > -100)

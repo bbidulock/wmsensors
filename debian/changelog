@@ -1,0 +1,21 @@
+wmsensors (1.0.4-3) unstable; urgency=low
+
+  * Updated build-depends
+
+ -- Randolph Chung <tausq@debian.org>  Wed, 12 Dec 2001 17:17:17 -0800
+
+wmsensors (1.0.4-2) unstable; urgency=low
+
+  * Rebuilt with libsensors1 (Closes: #66781)
+
+ -- Randolph Chung <tausq@debian.org>  Wed,  5 Jul 2000 20:58:17 -0700
+
+wmsensors (1.0.4-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Randolph Chung <tausq@debian.org>  Mon, 10 Apr 2000 23:09:34 -0700
+
+Local variables:
+mode: debian-changelog
+End:

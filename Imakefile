@@ -35,7 +35,7 @@ EXTRA_DEFINES = -Debug        /* CFLAGS = -Debug */
 SRCS = wmsensors.c
 OBJS = wmsensors.o
 
-ComplexProgramTarget(wmsensors)
+ComplexProgramTargetNoMan(wmsensors)
 
 
 

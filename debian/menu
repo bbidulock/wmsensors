@@ -1,0 +1,2 @@
+?package(wmsensors):needs=X11 section=Apps/System\
+  title="wmsensors" command="/usr/X11R6/bin/wmsensors"
