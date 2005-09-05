@@ -1,3 +1,15 @@
+wmsensors (1.0.4-4) unstable; urgency=low
+
+  * QA Group upload orphaning this package
+  * Incorporates previous NMUs
+  * debian/rules: removed dh_suidregister call
+  * debian/control: added conflict with suidmanager
+  * debian/copyright: removed dh_make boilerplatedness
+  * debian/menu: quoted the unquoted
+  * debian/rules: raised debhelper compatibility level to 3
+
+ -- Andrew Pollock <apollock@debian.org>  Mon,  5 Sep 2005 23:03:56 +1000
+
 wmsensors (1.0.4-3.4) unstable; urgency=low
 
   * NMU, fix architecture.  Closes: #238253

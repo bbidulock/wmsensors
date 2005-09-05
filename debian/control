@@ -1,13 +1,14 @@
 Source: wmsensors
 Section: x11
 Priority: optional
-Maintainer: Randolph Chung <tausq@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: libsensors-dev (>= 2.8.4-1), debhelper, xlibs-dev, xutils
 Standards-Version: 3.6.1.0
 
 Package: wmsensors
 Architecture: any
 Depends: ${shlibs:Depends}
+Conflicts: suidmanager (<< 0.50)
 Suggests: x-terminal-emulator
 Description: WindowMaker dock applet for lmsensors
  wmsensors is a WindowMaker applet that shows bar graphs of the information
