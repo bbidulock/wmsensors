@@ -1,3 +1,10 @@
+wmsensors (1.0.4-5) unstable; urgency=high
+
+  * Debian QA upload.
+  * Split xlibs-dev build-dep (Closes: #346950).
+
+ -- Luk Claes <luk@debian.org>  Thu, 12 Jan 2006 16:01:41 +0100
+
 wmsensors (1.0.4-4) unstable; urgency=low
 
   * QA Group upload orphaning this package

@@ -20,7 +20,7 @@
 DEBUG = 1
 
 /* installation directory is the combination of $(DESTDIR)  and $(BINDIR)*/
-DESTDIR = /usr/X11R6
+DESTDIR = /usr
 BINDIR = /bin
 
 XPMLIB = -L/usr/lib/X11 -lXpm -lm -lsensors
