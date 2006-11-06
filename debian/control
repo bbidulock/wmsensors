@@ -1,9 +1,9 @@
 Source: wmsensors
 Section: x11
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Julien Danjou <acid@debian.org>
 Build-Depends: libsensors-dev (>= 2.8.4-1), debhelper (>= 5), libx11-dev, libxext-dev, libxpm-dev, x-dev, xutils
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 
 Package: wmsensors
 Architecture: any

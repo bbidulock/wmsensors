@@ -4,7 +4,7 @@
 # ----------------------------------------------------------------------
 # Makefile generated from "Imake.tmpl" and <Imakefile>
 # $Xorg: Imake.tmpl,v 1.4 2000/08/17 19:41:46 cpqbld Exp $
-# $XdotOrg: xc/config/cf/Imake.tmpl,v 1.16 2005/11/08 06:33:24 jkj Exp $
+# $XdotOrg: util/cf/Imake.tmpl,v 1.17 2006/04/15 15:55:25 herrb Exp $
 #
 #
 #
@@ -16,7 +16,7 @@ all::
 
 .SUFFIXES: .i
 
-# $XdotOrg: xc/config/cf/Imake.cf,v 1.12 2005/11/08 06:33:24 jkj Exp $
+# $XdotOrg: util/cf/Imake.cf,v 1.12 2005/11/08 06:33:24 jkj Exp $
 # $Xorg: Imake.cf,v 1.4 2000/08/17 19:41:45 cpqbld Exp $
 
 # $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/16 21:30:21 herrb Exp $
@@ -36,19 +36,19 @@ all::
 # ----------------------------------------------------------------------
 # platform-specific configuration parameters - edit linux.cf to change
 
-# $XdotOrg: xc/config/cf/linux.cf,v 1.31 2005/10/21 19:10:27 ajax Exp $
+# $XdotOrg: util/cf/linux.cf,v 1.31 2005/10/21 19:10:27 ajax Exp $
 # platform:  $Xorg: linux.cf,v 1.3 2000/08/17 19:41:47 cpqbld Exp $
 
 # platform:  $XFree86: xc/config/cf/linux.cf,v 3.220 2003/12/30 22:38:33 tsi Exp $
 
-# operating system:  Linux 2.6.15-1-k7 i686 [ELF] (2.6.15)
-# libc:	(6.3.5)
-# binutils:	(216)
+# operating system:  Linux 2.6.18-1-686 i686 [ELF] (2.6.18)
+# libc:	(6.3.6)
+# binutils:	(217)
 
 # $Xorg: lnxLib.rules,v 1.3 2000/08/17 19:41:47 cpqbld Exp $
 # $XFree86: xc/config/cf/lnxLib.rules,v 3.52 2003/10/31 20:49:03 herrb Exp $
 
-# $XdotOrg: xc/config/cf/xorg.cf,v 1.53 2005/10/03 16:08:44 alanc Exp $
+# $XdotOrg: util/cf/xorg.cf,v 1.53 2005/10/03 16:08:44 alanc Exp $
 
 # $Xorg: xfree86.cf,v 1.4 2000/08/17 19:41:49 cpqbld Exp $
 
@@ -97,7 +97,7 @@ XFREE86JAPANESEDOCDIR = $(DOCDIR)/Japanese
 # ---------------------------------------------------------------------
 # Imake rules for building libraries, programs, scripts, and data files
 # rules:  $Xorg: Imake.rules,v 1.3 2000/08/17 19:41:46 cpqbld Exp $
-# rules:  $XdotOrg: xc/config/cf/Imake.rules,v 1.11 2005/11/08 06:33:24 jkj Exp $
+# rules:  $XdotOrg: util/cf/Imake.rules,v 1.11 2005/11/08 06:33:24 jkj Exp $
 #
 #
 #
@@ -142,15 +142,15 @@ TCLIBDIR = /usr/lib
          IMAKESRC = $(CONFIGSRC)/imake
         DEPENDSRC = $(CONFIGSRC)/util
 
-          INCROOT = /usr/X11R6/include
-        USRLIBDIR = /usr/X11R6/lib
+          INCROOT = /usr/include
+        USRLIBDIR = /usr/lib
            VARDIR = /var
         VARLIBDIR = $(VARDIR)/lib
   SYSTEMUSRLIBDIR = /usr/lib
   SYSTEMUSRINCDIR = /usr/include
-         SHLIBDIR = /usr/X11R6/lib
+         SHLIBDIR = /usr/lib
        LINTLIBDIR = $(USRLIBDIR)/lint
-          MANPATH = /usr/X11R6/man
+          MANPATH = /usr/share/man
     MANSOURCEPATH = $(MANPATH)/man
            MANDIR = $(MANSOURCEPATH)$(MANSECT)
     SYSCALLMANDIR = $(MANSOURCEPATH)$(SYSCALLMANSECT)
@@ -160,8 +160,8 @@ TCLIBDIR = /usr/lib
        GAMEMANDIR = $(MANSOURCEPATH)$(GAMEMANSECT)
        MISCMANDIR = $(MANSOURCEPATH)7
         ADMMANDIR = $(MANSOURCEPATH)$(ADMMANSECT)
-	  ICONDIR = /usr/X11R6/lib/X11/icons
-      XCURSORPATH = ~/.icons:/usr/share/icons:/usr/share/pixmaps:/usr/X11R6/lib/X11/icons
+	  ICONDIR = "/usr/share/icons"
+      XCURSORPATH = "~/.icons:/usr/share/icons:/usr/share/pixmaps"
      DRIVERMANDIR = $(MANSOURCEPATH)4
      LOGDIRECTORY = $(VARDIR)/log
 
@@ -323,7 +323,7 @@ MODLDCOMBINEFLAGS = -r
      INSTDATFLAGS = -m 0444
     INSTKMEMFLAGS = -m 4711
 
-      PROJECTROOT = /usr/X11R6
+      PROJECTROOT = /usr
 
       CDEBUGFLAGS = -g -O2 -fno-strict-aliasing
         CCOPTIONS =
@@ -332,7 +332,7 @@ MODLDCOMBINEFLAGS = -r
        ALLDEFINES = $(ALLINCLUDES) $(STD_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(MODULE_DEFINES) $(DEFINES) $(EXTRA_DEFINES)
            CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(MODULE_CFLAGS) $(ALLDEFINES)
         LINTFLAGS = $(LINTOPTS) -DLINT $(ALLDEFINES) $(DEPEND_DEFINES)
-         LDPRELIB = -L$(USRLIBDIR) $(INSTALLED_LIBS)
+         LDPRELIB =  $(INSTALLED_LIBS)
         LDPOSTLIB =
         LDOPTIONS = $(CDEBUGFLAGS) $(CCOPTIONS)  $(EXTRA_LDOPTIONS) $(THREADS_LDFLAGS) $(LOCAL_LDFLAGS) $(LDPRELIBS)
      CXXLDOPTIONS = $(CXXDEBUGFLAGS) $(CXXOPTIONS) $(EXTRA_LDOPTIONS) $(THREADS_CXXLDFLAGS) $(LOCAL_LDFLAGS) $(LDPRELIBS)
@@ -375,7 +375,7 @@ MODLDCOMBINEFLAGS = -r
 
 # ----------------------------------------------------------------------
 # X Window System Build Parameters and Rules
-# $XdotOrg: xc/config/cf/X11.tmpl,v 1.54 2005/12/14 23:41:52 alanc Exp $
+# $XdotOrg: util/cf/X11.tmpl,v 1.54 2006/04/15 15:55:25 herrb Exp $
 # $Xorg: X11.tmpl,v 1.6 2000/08/17 19:41:46 cpqbld Exp $
 #
 #
@@ -394,7 +394,7 @@ FCHOWN_DEFINES = -DHAS_FCHOWN
 # X Window System make variables; these need to be coordinated with rules
 
              XTOP = $(TOP)
-           BINDIR = /usr/X11R6/bin
+           BINDIR = /usr/bin
      BUILDINCROOT = $(TOP)/exports
       BUILDINCDIR = $(BUILDINCROOT)/include
       BUILDINCTOP = ../..
@@ -411,13 +411,14 @@ FCHOWN_DEFINES = -DHAS_FCHOWN
      XBUILDBINDIR = $(XBUILDINCROOT)/bin
            INCDIR = $(INCROOT)
            ADMDIR = /usr/adm
-           LIBDIR = /usr/X11R6/lib/X11
-       LIBEXECDIR = /usr/X11R6/libexec
+           LIBDIR = /usr/lib/X11
+         SHAREDIR = /usr/share/X11
+       LIBEXECDIR = /usr/libexec
         MODULEDIR = $(USRLIBDIR)/modules
    TOP_X_INCLUDES =
           XBINDIR = $(PROJECTROOT)/bin
 
-       INSTSRCDIR = /usr/X11R6/src
+       INSTSRCDIR = /usr/src
 
         ETCX11DIR = /etc/X11
 
@@ -993,11 +994,11 @@ XKBUILIB =  -lxkbui
 
 LINTXKBUI = $(LINTLIBDIR)/llib-lxkbui.ln
 
-EXTRAXAWREQS = $(XPLIB)
+EXTRAXAWREQS =
 
-EXTRAXAWCLIENTDEPLIBS = $(DEPXPLIB)
+EXTRAXAWCLIENTDEPLIBS =
 
-EXTRAXAWCLIENTLIBS = $(XPLIB)
+EXTRAXAWCLIENTLIBS =
 
         XTRAPLIBSRC = $(LIBSRC)/XTrap
 
@@ -1030,9 +1031,9 @@ XMULIB = $(XMULIBONLY) $(XTOOLLIB) $(XLIB)
         CONFIGDIR = $(LIBDIR)/config
 
     USRLIBDIRPATH = $(USRLIBDIR)
-        LDPRELIBS = -L$(USRLIBDIR)  $(INSTALLED_LIBS)
+        LDPRELIBS =   $(INSTALLED_LIBS)
        LDPOSTLIBS =
-     TOP_INCLUDES = -I$(INCROOT) $(TOP_X_INCLUDES)
+     TOP_INCLUDES =  $(TOP_X_INCLUDES)
   PROJECT_DEFINES =
    VENDOR_DEFINES = -DXVENDORNAME='"$(VENDORNAME)"' -DXVENDORNAMESHORT='"$(VENDORNAMESHORT)"'
 

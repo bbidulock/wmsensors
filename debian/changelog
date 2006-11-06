@@ -1,3 +1,10 @@
+wmsensors (1.0.4-6) unstable; urgency=low
+
+  * New maintainer
+  * Bump standards version
+
+ -- Julien Danjou <acid@debian.org>  Mon,  6 Nov 2006 16:34:45 +0100
+
 wmsensors (1.0.4-5) unstable; urgency=high
 
   * Debian QA upload.
