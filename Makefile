@@ -21,8 +21,6 @@ all::
 
 # $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/16 21:30:21 herrb Exp $
 
-# Keep cpp from replacing path elements containing i486/i586/i686
-
 # -----------------------------------------------------------------------
 # site-specific configuration parameters that need to come before
 # the platform-specific parameters - edit site.def to change
@@ -41,9 +39,9 @@ all::
 
 # platform:  $XFree86: xc/config/cf/linux.cf,v 3.220 2003/12/30 22:38:33 tsi Exp $
 
-# operating system:  Linux 2.6.18-1-686 i686 [ELF] (2.6.18)
-# libc:	(6.3.6)
-# binutils:	(217)
+# operating system:  Linux 2.6.26-1-amd64 x86_64 [ELF] (2.6.26)
+# libc:	(6.7.0)
+# binutils:	(218)
 
 # $Xorg: lnxLib.rules,v 1.3 2000/08/17 19:41:47 cpqbld Exp $
 # $XFree86: xc/config/cf/lnxLib.rules,v 3.52 2003/10/31 20:49:03 herrb Exp $
@@ -110,7 +108,7 @@ XFREE86JAPANESEDOCDIR = $(DOCDIR)/Japanese
 
 X_BYTE_ORDER = X_LITTLE_ENDIAN
 
-GLIDE2INCDIR = /usr/include/glide
+GLIDE2INCDIR =
 
 GLIDE3INCDIR = /usr/include/glide3
 
@@ -175,12 +173,12 @@ TCLIBDIR = /usr/lib
 # from  top Makefile
   BOOTSTRAPCFLAGS =
 
-               CC = gcc -m32
-               AS = gcc -m32 -c -x assembler
+               CC = gcc
+               AS = gcc -c -x assembler
 
 .SUFFIXES: .cc
 
-              CXX = c++ -m32
+              CXX = c++
 
           CXXFILT = c++filt
 
@@ -190,7 +188,7 @@ TCLIBDIR = /usr/lib
 CXXDEPENDINCLUDES =
  CXXEXTRA_DEFINES =
 CXXEXTRA_INCLUDES =
-   CXXSTD_DEFINES = -Dlinux -D__i386__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(CXXPROJECT_DEFINES)
+   CXXSTD_DEFINES = -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(CXXPROJECT_DEFINES)
        CXXOPTIONS =
       CXXINCLUDES = $(INCLUDES) $(TOP_INCLUDES) $(CXXEXTRA_INCLUDES)
        CXXDEFINES = $(CXXINCLUDES) $(CXXSTD_DEFINES) $(THREADS_CXXDEFINES) $(DEFINES) $(CXXEXTRA_DEFINES)
@@ -201,12 +199,12 @@ CXXEXTRA_INCLUDES =
 
               CPP = cpp $(STD_CPP_DEFINES)
            RAWCPP = cpp -undef $(STD_CPP_OPTIONS)
-    PREPROCESSCMD = gcc -m32 -E $(STD_CPP_DEFINES)
+    PREPROCESSCMD = gcc -E $(STD_CPP_DEFINES)
 
           INSTALL = install
      INSTALLFLAGS = -c
 
-               LD = gcc -m32 -nostdlib
+               LD = gcc -nostdlib
 
               LEX = flex -l
                M4 = m4
@@ -270,14 +268,14 @@ CXXEXTRA_INCLUDES =
               COL = col
          COLFLAGS = -b
 
-            MODCC = gcc -m32
+            MODCC = gcc
 
            MODCPP = cpp
         MODCFLAGS = $(CFLAGS)
-            MODAS = gcc -m32 -c -x assembler
+            MODAS = gcc -c -x assembler
        MODASFLAGS =
 
-            MODLD = gcc -m32 -nostdlib
+            MODLD = gcc -nostdlib
 
        MODLDFLAGS =
 MODLDCOMBINEFLAGS = -r
@@ -290,8 +288,8 @@ MODLDCOMBINEFLAGS = -r
 
      STD_INCLUDES =
   STD_CPP_OPTIONS = -traditional
-  STD_CPP_DEFINES = -traditional -Dlinux -D__i386__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(PROJECT_DEFINES)
-      STD_DEFINES = -Dlinux -D__i386__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(PROJECT_DEFINES)
+  STD_CPP_DEFINES = -traditional -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(PROJECT_DEFINES)
+      STD_DEFINES = -Dlinux -D__amd64__ -D_POSIX_C_SOURCE=199309L 				-D_POSIX_SOURCE -D_XOPEN_SOURCE 				-D_BSD_SOURCE -D_SVID_SOURCE                                 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 				  				 $(PROJECT_DEFINES)
  EXTRA_LOAD_FLAGS =
   EXTRA_LDOPTIONS =
   EXTRA_LIBRARIES =
@@ -428,8 +426,8 @@ FCHOWN_DEFINES = -DHAS_FCHOWN
        DOCHTMLDIR = $(DOCDIR)/html
          DOCPSDIR = $(DOCDIR)/PostScript
         DOCPDFDIR = $(DOCDIR)/PDF
-          FONTDIR = $(LIBDIR)/fonts
-     ENCODINGSDIR = $(LIBDIR)/fonts/encodings
+          FONTDIR = /usr/share/fonts/X11
+     ENCODINGSDIR = /usr/share/fonts/X11/encodings
          XINITDIR = $(LIBDIR)/xinit
            XDMDIR = $(LIBDIR)/xdm
         XDMVARDIR = $(VARLIBDIR)/xdm

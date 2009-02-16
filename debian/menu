@@ -1,2 +1,2 @@
-?package(wmsensors):needs="X11" section="Apps/System"\
+?package(wmsensors):needs="X11" section="Applications/System/Monitoring"\
   title="wmsensors" command="/usr/bin/wmsensors"
