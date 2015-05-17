@@ -1,0 +1,38 @@
+                  wmsensors Frequently Asked Questions
+             ==============================================
+
+                                  or,
+
+             Qs I think might have been FA without this FAQ
+
+--------------------------------------------------------------------------
+
+Q: Why can't I drag the wmsensors window into the dock? It just opens the
+   man page or gives a text output of my sensor chips.
+A: You probably forgot to run the program with the -s -w switches. These
+   are needed for Window Maker dock programs; they aren't enabled by
+   default to increase the chance of this working with other WMs if people
+   want.
+   Also, you need to drag the icon window across by its border. Useful
+   commands are triggered by clicking in the actual wmsensors window.
+
+Q: Why doesn't the wmsensors tarball include lm_sensors any more?
+A: Because lm_sensors is big and is updated independently of wmsensors. It
+   doesn't need me promoting it any more; it's on its way into the official
+   kernel soon. You can get it yourself from http://www.lm-sensors.nu
+
+Q: Is wmsensors Y2K compliant.
+A: There isn't a single date reference in the code. 
+
+Q: I tried wmsensors -a and it didn't work. Why is my nice PC now a heap
+   of molten slag?
+A: There isn't a default alarm command; you must specify one as follows:
+   wmsensors -a my_script would execute my_script (must be in your path!)
+   in the event of one of the alarms being triggered.
+   As for the heap of slag, you haven't been overclocking have you? ;-)'
+
+If you have any other questions, e-mail me at adrian.baugh@keb.ox.ac.uk
+I'll answer them if I can, and list them in the FAQ if they are likely to
+become FAQs.
+
+Adrian Baugh.

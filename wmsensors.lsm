@@ -1,0 +1,18 @@
+Begin3
+Title:          wmsensors
+Version:        1.0.4
+Entered-date:   06MAY99
+Description:    X11 dock-applet for monitoring hardware health-monitoring
+                chips. Works in conjunction with the lm_sensors2 kernel
+                modules.
+Keywords:       sensors dock windowmaker health monitor
+Author:         adrian.baugh@keble.ox.ac.uk (Adrian Baugh)
+Maintained-by:  adrian.baugh@keble.ox.ac.uk (Adrian Baugh)
+Primary-site:   http://users.ox.ac.uk/~kebl0850/wmlm78/
+                29kB wmsensors-1.0.4.tar.gz
+Alternate-site: 
+Original-site:  
+Platforms:      Hardware health sensors, linux kernel 2.x.y, lm_sensors-2.x.y
+Copying-policy: GPL
+End
+

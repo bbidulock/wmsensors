@@ -1,0 +1,50 @@
+Currently, the official linux kernel tree does not include support for 
+health sensor modules, although they will probably appear sometime in 2.3.
+For now, we're stuck with getting the modules ourselves.
+
+There are a few available, and I'll discuss them:
+
+* Ronald Schmidt
+  http://www.tu-chemnitz.de/~ronsc/tree/2_Projects/0_c++/lm78/index.html
+    This one is the one I started out with. It is not nicely coded (it
+    uses floating-point in the kernel, which is a no-no) and it doesn't
+    properly implement even the capabilities of the standalone lm78. It
+    is not supported by wmlm78 any more. There are better things around!
+* Alexander Larsson
+  http://www.lysator.liu.se/~alla/
+    This one I haven't seen, but it has been used as the basis of a module
+    written by Larsson in conjunction with Frodo Looijaard and Philip
+    Edelbrock. I'm not going to bother supporting this since the later
+    module is effectively an extension of this and you should use that
+    instead.
+* Beowulf project lm78 module (by Erik Hendriks)
+  http://cesdis.gsfc.nasa.gov/beowulf/software/lm78-0.2.tar.gz
+    This module is quite nice, especially if you're planning to write
+    scripts using the information from /proc. Its disadvantage is that it
+    gives the data in raw DAC output (ie 0-4095). This is taken care of by
+    wmlm78, but it makes the /proc entries less pleasing to cat, for example.
+    It doesn't support the lm75 temperature sensor. This module is supported
+    by wmlm78, but not by wmsensors.
+* ????
+  http://pweb.uunet.de/ganzfix.duew/
+    Another implementation I've recently found. The first time I ran it it
+    took my system down, so I'm not going to support it unless someone can
+    give me details of the output it produces in /proc.
+* lm_sensors (originally by Alexander Larsson, now mainly by Frodo Looijaard
+    and Philip Edelbrock).
+  http://www.netroedge.com/~lm78/
+    This is very nice. Not only does it support just about every sensor chip 
+    under the sun, but it produces a nice, human-readable output. It also 
+    looks to have some exciting developments in store...
+    This is the module I use myself (so all releases I put out will
+    work with this module, at least on my system). Version 1.4.x is supplied
+    with wmlm78). Version 2.x is the only module supported by wmsensors. If 
+    you need to use another module, use wmlm78; it will probably do most of 
+    what you need.
+
+Note: As of wmsensors 1.0.4 you will need to get hold of lm_sensors-2
+yourself. It is not included any more as it is big and is readily available
+from http://www.lm-sensors.nu
+
+-- 
+Adrian Baugh.

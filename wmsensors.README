@@ -1,0 +1,20 @@
+wmsensors
+=========
+
+This application docks into the Window Maker dock and draws graphs of data
+obtained from the sensors kernel module via a userspace library.
+
+Have a look at Changes - I sometimes put useful information in there by
+mistake :-)
+
+I welcome any testing you do on this - if you find any mistakes, I can be
+e-mailed at:
+
+adrian.baugh@keble.ox.ac.uk
+
+The wmlm78 and wmsensors software is distributed under the GNU public
+license, version 2. If you don't have a copy, e-mail me. You should have
+got one with this software.
+
+ Enjoy!
+   Adrian Baugh. 

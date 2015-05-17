@@ -1,0 +1,37 @@
+This install will probably mean two stages, unless you already have
+lm_sensors-2.[x>=1] installed. If you have, go to the second part.
+Otherwise, read on...
+
+First, make and install lm_sensors-2.[x>=1]. This program does not support
+the various other sensor modules around; if you want to use them then
+you need wmlm78, which provides much of the same functionality as this
+program, but is not actively maintained much (though I will include real 
+showstopper bugfixes). You must install lmsensors-2 properly so that the 
+sensors library can be found and linked against.
+
+------------------------------------------------------------------------
+
+You now need to make and install the wmsensors program to show the data
+from your sensors in a spiffy and sometimes useful way.
+Do this as follows:
+
+1. Check the Imakefile to see if all the LIBS are ok for your system.
+   Also, check DESTDIR and BINDIR; as they are now, a `make install'
+   will put the wmsensors binary in /usr/X11R6/bin.
+2. $ `xmkmf'
+3. $ `make'
+4. # `make install'
+5. # cp wmsensors.1x /usr/X11R6/man/man1
+6. Enjoy!!!!
+
+----------------------------------------------------------------------
+
+If you have any problems at all with this program, please e-mail me at
+adrian.baugh@keble.ox.ac.uk, and I will be glad to help. Especially if
+you have a system on which this doesn't work, I want to hear from you!
+I may not be able to fix it immediately, but I'll certainly try.
+
+Also, if you know how Imakefiles work and can tell me how to write an
+Imakefile  that  produces a Makefile that puts the man  page  in  the
+right place during make install I will be very grateful.
+----------------------------------------------------------------------

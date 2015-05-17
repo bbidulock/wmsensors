@@ -1,0 +1,127 @@
+.\" Copyright (c) 1998 Adrian Baugh (adrian.baugh@keble.ox.ac.uk)
+.\"
+.\" This is free documentation; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation; either version 2 of
+.\" the License, or (at your option) any later version.
+.\"
+.\" The GNU General Public License's references to "object code"
+.\" and "executables" are to be interpreted as the output of any
+.\" document formatting or typesetting system, including
+.\" intermediate and printed output.
+.\"
+.\" This manual is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public
+.\" License along with this manual; if not, write to the Free
+.\" Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139,
+.\" USA.
+.\" 
+.\" Modified Sat Jul 24 17:00:12 1993 by Rik Faith (faith@cs.unc.edu)
+.TH wmsensors 1 "23 December 1998" "wmsensors" "Window Maker Application"
+.SH NAME
+wmsensors
+.SH DESCRIPTION
+Reads information from the kernel sensor modules using a userspace library and displays this in graphical form in an X module designed to be dockable in the \fBWindow Maker\fP dock.
+.br
+The original code is based on \fBwmload\fP, currently maintained by Ryan Land.
+.br
+The information is displayed in two columns so that each graph can be given extra resolution.
+.PP
+From top to bottom, the graphs are placed in the following order (graphs on the right hand side of the screen are indented):
+.PP
+.sp
+First remote temperature (if available) (BRIGHT RED)
+.br
+Optionally, second remote temperature (BRIGHT RED)
+.br
+Motherboard (main sensor) temperature (BRIGHT RED)
+.br
+		IN0 (CPU 1 core) voltage (BRIGHT GREEN)
+.br
+IN3 voltage (+5V) (PURPLE)
+.br
+		IN1 (I/O or CPU 2 core) voltage
+.br
+IN6 voltage (-5V) (AQUAMARINE)
+.br
+		IN2 voltage (+3.3V) (DARK RED)
+.br
+IN4 voltage (+12V) (BRIGHT ORANGE)
+.br
+		Fan 1 (WHITE)
+.br
+IN5 voltage (-12V) (BRIGHT YELLOW)
+.br
+		Fan 2 (MID GREY)
+.br
+		Fan 3 (BROWN)
+.sp
+.RE
+.SH USAGE
+wmsensors can take various command-line options. These are as follows:
+.br
+-a [command]			program to start on sensor alarms
+.br
+-u <secs>				updatespeed
+.br
+-exe <program>			program to start on middle-click
+.br
+-position [+|-]x[+|-]y	position of wmlm78
+.br
+-record [filename]		logs data to [filename]
+.br
+-shape				without groundplate
+.br
+-lm75				plots multiple CPU temperatures
+.br
+-iconic				start up as icon
+.br
+-withdrawn			start up withdrawn
+.br
+-ver					output version and quit
+.br
+-config	filename		specify config file
+.SH NOTES
+This program requires the lm_sensors-2.x kernel modules in order to work.
+.br
+On left-clicking in the program window the program sensors (by Frodo Looijaard) is run in an xterm.
+.br
+On centre-clicking in the program window a user-defined command is executed; if no command is specified, then /usr/local/bin/sensors -s will be run. When run as root, this will update the sensor limits as specified in sensors.conf.
+On right-clicking in the program window this man page is shown.
+.br
+Two bright red traces may apppear in the temperature display, depending
+on which sensors your motherboard has. This means that both motherboard and
+CPU temperature are being displayed.
+.br
+Note that even with the -lm75 option you often only see two traces, as the CPU temperatures ought to be pretty equal.
+.br
+The -config option should be common to all applications that use libsensors.
+.br
+The default filename used by the -record option is wmsensors.log, in the current working directory. wmsensors -r - may be used to write the data to stdout.
+.br
+.SH FILES
+/usr/X11R6/bin/wmsensors
+.br
+/etc/sensors.conf (may be located in /usr/local/lib or elsewhere...)
+.br
+Various files under /proc
+.SH VERSION
+1.0.4
+.BR
+
+
+
+
+
+
+
+
+
+
+
+
+

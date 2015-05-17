@@ -1,0 +1,46 @@
+Changes log for wmsensors: last updated 19991203
+
+Changes since wmsensors-1.0.3:
+      o Added support for more sensors. Fixed some minor bugs and one
+	really stupid one. Made the program work even if some sensors
+	don't return a proper reading.
+Changes since wmsensors-1.0.2:
+      o Added a wmsensors.spec file, thanks to Ian Macdonald. Now I just
+	need time to make some nice updated RPMs!
+Changes since wmsensors-1.0.0:
+      o Lars Kellogg-Stedman pointed out a way to dispense with the
+	sensors.less.sh kluge, so the program is now more self-contained
+	and doesn't need an extra shell script lying around the system.
+	Thanks Lars!
+
+Changes since wmsensors-0.99.0:
+      o All the chips supported in lm_sensors 2.2.0 are supported in
+	wmsensors v1.0.0.
+      o The graphs are now plotted using a scaling based on the sensor
+	limits rather than the arbitrary scaling I used up till now. This
+	is important since I don't know how all sensor chips are wired up;
+	now I don't need to care, either.
+      o Support for user-defined commands to be executed when the alarms
+	are triggered has been added.
+      o Some typos have been fixed. These were all cosmetic though.
+
+Changes since wmlm78:
+      o I've sorted out the sloppy copyright notices which appeared to
+	license wmlm78 under either the GPL or a BSD-style license. Future
+	versions of wmlm78, as well as all versions of wmsensors, are
+	released under the GPL only.
+      o Support for lm_sensors v1 and the Beowulf lm78 module has been
+	removed; wmsensors requires libsensors to compile, and if you have
+	this then you have lm_sensors v2 anyway. If you must use one of
+	the older modules, stick with wmlm78 for now. By the time wmsensors
+	becomes stable, lm_sensors-2.x will also be stable and will have
+	entirely supplanted lm_sensors-1.x.
+      o Support for lm_sensors v2 has been added. Currently it will work with
+	lm75, lm78, lm79, lm80, w83781d (Winbond) chips and there is some code
+	which may or may not work with gl815 chips. Any feedback (at all!) on
+	these chips is especially welcomed.
+      o A logging option has been added. wmsensors -r filename will dump all
+	the data wmsensors collects to a file called filename. (Note that
+	wmsensors -r - may be used to write data to stdout.)
+
+ Adrian Baugh.
